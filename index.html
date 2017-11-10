@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-US" class="empower empower-story paint-3 tx-sans">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confident CSS</title>
+<link rel="stylesheet" href="https://unpkg.com/flexboxes@0.7.0/main.css">
+<link rel="stylesheet" href="https://unpkg.com/spacing@0.1.0/main.css">
+<link rel="stylesheet" href="https://unpkg.com/empower.css@0.1.0/empower.css">
+<link rel="stylesheet" href="https://unpkg.com/tx.css@0.1.0/tx.css">
+<link rel="stylesheet" href="https://unpkg.com/weight.css@0.1.0/weight.css">
+<link rel="stylesheet" href="https://unpkg.com/flow.css@0.5.0/flow.css">
+<link rel="stylesheet" href="https://unpkg.com/area.css@0.4.0/area.css">
+<link rel="stylesheet" href="https://unpkg.com/border.css@0.10.0/border.css">
+<link rel="stylesheet" href="https://unpkg.com/bullet.css@0.2.0/bullet.css">
+
+<style>
+[hidden] { display: none }
+::selection {
+  color: Gold;
+  background: Black;
+}
+* {
+  box-sizing: border-box;
+}
+.break-word {
+  word-wrap: break-word;
+}
+.paint-1 {
+  color: Black;
+  background-color: Gold;
+}
+.paint-2 {
+  color: Black;
+  background-color: Azure;
+}
+.paint-3 {
+  color: Azure;
+  background-color: BlueViolet;
+}
+.paint-4 {
+  color: Linen;
+  background-color: DeepSkyBlue;
+}
+.paint-5 {
+  color: Black;
+  background-color: Linen;
+}
+.paint-7 {
+  color: Linen;
+  background-color: Black;
+}
+.paint-8 {
+  color: Black;
+  background-color: SpringGreen;
+}
+.paint-9 {
+  color: Black;
+  background-color: Orange;
+}
+.list-none {
+  list-style-type: none;
+}
+:link,
+:visited {
+  color: inherit;
+}
+</style><body class="m0 p0 height-all width-all">
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 " HIDDEN>
+  <div class="flex flex-column m-auto">
+    <h1 class="weight-600 m0 empower-impact break-word paint-">
+      <span class="inline-root empower-impact weight-600">confident<span class="inline-root weight-300">(CSS)</span></span>
+
+    </h1>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+    <h1 class="weight-600 m0 empower-impact break-word paint-">
+      <span class="block-flow empower-impact weight-600">Confident</span>
+      <span class="block-flow empower-impact weight-300">CSS</span>
+    </h1>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-5 ">
+  <div class="flex flex-column m-auto">
+    <h1 class="weight-600 m0 empower-impact break-word paint-">
+      <span class="block-flow empower-impact weight-600">Confident</span>
+      <span class="block-flow empower-impact weight-300">CSS</span> is...
+    </h1>
+    <ul class="m0 p0 mb-auto empower-impact bullet-none self-end">
+      <li class="m0 weight-900">Immutable
+      <li class="m0 weight-900">Flat
+      <li class="m0 weight-900">Composable
+    </ul>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-5">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.confident {
+  --when: immutable;
+  --when: flat;
+  --when: composable;
+}
+</code></pre>
+  </div>
+</article>
+
+<!-- <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+    <h1 class="weight-800 m2 empower-impact break-word paint-">
+      Mutability?
+    </h1>
+    <ul class="m0 p0 mb-auto empower-impact  self-end">
+      <li class="m0 weight-400">Contextual overrides</b>
+      <li class="m0 weight-400">Unpredictable</b>
+      <li class="m0 weight-400">Unreachable</b>
+    </ul>
+  </div>
+</article> -->
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+--antipattern: mutation;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.mutation {
+  --effect: erratic;
+  --effect: bugs;
+}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 " HIDDEN>
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.app {
+  .search {
+    --antipattern: mutation;
+    --antipattern: nesting;
+  }
+}
+</code></pre>
+  </div>
+</article>
+
+<!--
+feedback
+how
+linting
+code smelll whn order matters
+different dimensions of change
+~confident~ resilienrt
+resilient = sturdy + flexible
+resilient:
+  durable,
+  flexible;
+-->
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+--antipattern: nesting;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.app {
+  .search {
+    --antipattern: mutation;
+    --antipattern: nesting;
+    --effect: erratic;
+    --effect: brittle;
+    --effect: lost;
+  }
+}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 " HIDDEN>
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.app {
+  .search {
+    --antipattern: mutation;
+    --antipattern: nesting;
+    --effect: unpredictable;
+    --effect: brittle;
+    --effect: lost;
+  }
+}
+</code></pre>
+  </div>
+</article>
+
+<pre class="weight-800 empower-" HIDDEN><code>
+.app {
+  .app-header {
+    h1 {
+      --antipattern: mutation;
+      --design: inconsistent;
+      --quality: unpredictable;
+      --debugging: unreachable;
+      --change: brittle;
+    }
+  }
+}
+</code></pre>
+
+<ul class="m0 p0 mb-auto empower-impact self-end" HIDDEN>
+  <li class="m0 weight-400">Contextual overrides</b>
+  <li class="m0 weight-400">Unpredictable</b>
+  <li class="m0 weight-400">Unreachable</b>
+</ul>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.immutable {
+  --effect: predictable;
+  --effect: composable;
+  --effect: confidence;
+  --effect: resilient;
+}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+.flat {
+  --effect: findable;
+  --effect: debuggable;
+  --effect: performant;
+}
+</code></pre>
+  </div>
+</article>
+
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+  <pre class="weight-800 empower-"><code>
+  --antipattern: coupling;
+  </code></pre>
+  </div>
+</article>
+
+<pre class="weight-800 empower-" HIDDEN><code>
+.coupling {
+  --antipattern: mutation;
+  --design: inconsistent;
+  --quality: unpredictable;
+  --debugging: unreachable;
+  --change: brittle;
+}
+</code></pre>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+.composable {
+  --effect: flexible;
+  --effect: learnable;
+  --effect: systematic;
+  --effect: performant;
+}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  class="preset-tap shape-dense tone-primary"
+&gt;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  class="preset-box ix-tap shape-compact tone-primary"
+&gt;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  class="preset-box ix-tap shape-compact tone-primary"
+&gt;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  class="preset-box ix-tap pad-dense tone-primary"
+&gt;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  data-preset="control"
+  data-shape="plush"
+  data-tone="create"
+  data-shadow="4am 2pm"
+  data-spacing="ml1 ml0-first"
+&gt;
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-3 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
+&lt;button
+  data-control="control"
+  data-shape="dense"
+  data-tone="danger"
+  data-shadow="raised"
+  data-margin="left-dense"
+&gt;
+</code></pre>
+  </div>
+</article>
