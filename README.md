@@ -1,2 +1,2 @@
-# confident-css
+# Resilient CSS
 wip
