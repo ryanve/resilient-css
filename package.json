@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "homepage": "https://github.com/ryanve/resilient-css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanve/resilient-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanve/resilient-css/issues"
+  }
+}
