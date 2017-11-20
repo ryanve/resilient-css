@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "html-validator --file=index.html --verbose"
+  },
   "homepage": "https://github.com/ryanve/resilient-css",
   "repository": {
     "type": "git",
@@ -7,5 +11,8 @@
   },
   "bugs": {
     "url": "https://github.com/ryanve/resilient-css/issues"
+  },
+  "devDependencies": {
+    "html-validator-cli": "^3.2.0"
   }
 }
