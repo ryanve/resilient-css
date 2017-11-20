@@ -94,19 +94,21 @@
 
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-5 ">
   <div class="flex flex-column m-auto">
-    <h1 class="weight-600 m0 empower-impact break-word paint-">
-      <span class="block-flow empower-impact weight-600">Resilient</span>
-      <span class="block-flow empower-impact weight-300">CSS</span> is...
-    </h1>
-    <ul class="m0 p0 mb-auto empower-impact bullet-none self-end">
-      <li class="m0 weight-900">Immutable
-      <li class="m0 weight-900">Flat
-      <li class="m0 weight-900">Composable
-    </ul>
+    <p class="m0 mb2 empower-impact">
+      <b>Resilient</b> means <b>durable</b> and <b>flexible</b>.
+    </p>
   </div>
 </article>
 
-<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-5">
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-5 ">
+  <div class="flex flex-column m-auto">
+    <p class="m0 empower-impact">
+      When is <b>CSS</b> resilient?
+    </p>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-8">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 .resilient {
@@ -118,18 +120,17 @@
   </div>
 </article>
 
-<!-- <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1">
   <div class="flex flex-column m-auto">
-    <h1 class="weight-800 m2 empower-impact break-word paint-">
-      Mutability?
-    </h1>
-    <ul class="m0 p0 mb-auto empower-impact  self-end">
-      <li class="m0 weight-400">Contextual overrides</b>
-      <li class="m0 weight-400">Unpredictable</b>
-      <li class="m0 weight-400">Unreachable</b>
-    </ul>
+<pre class="weight-800 empower-"><code>
+.not-resilient {
+  --when: mutable;
+  --when: nested;
+  --when: coupled;
+}
+</code></pre>
   </div>
-</article> -->
+</article>
 
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
@@ -141,16 +142,43 @@
 
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
-    <p class="empower-proud p4 prose">If you define styles in one place and then override them in another context or file then you are mutating them.
+    <p class="empower-proud p4 prose">If you define styles and then override them in another <b>context</b> or <b>module</b> then you are mutating them.
   </div>
 </article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="m-auto">
+<h3 class="m0 mb2">button.css</h3>
+<pre class="m0 p0 weight-800 empower-"><code>
+.button {}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="m-auto">
+<h3 class="m0 mb2">app.css</h3>
+<pre class="m0 p0 weight-800 empower-"><code>
+47 results found for ".button"
+</code></pre>
+  </div>
+</article>
+
+<!--
+Contextual overrides
+Unpredictable
+Unreachable
+Difficult to change
+-->
 
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 .mutation {
-  --effect: erratic;
+  --effect: erratic; <!-- unpredictable -->
   --effect: bugs;
+  --effect: blocking; <!-- fear -->
+  --effect: buried; <!-- undocumented -->
 }
 </code></pre>
   </div>
@@ -193,27 +221,11 @@ resilient:
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
-.app {
+.context {
   .search {
     --antipattern: mutation;
     --antipattern: nesting;
     --effect: erratic;
-    --effect: brittle;
-    --effect: lost;
-  }
-}
-</code></pre>
-  </div>
-</article>
-
-<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 " HIDDEN>
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
-.app {
-  .search {
-    --antipattern: mutation;
-    --antipattern: nesting;
-    --effect: unpredictable;
     --effect: brittle;
     --effect: lost;
   }
