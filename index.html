@@ -75,14 +75,6 @@
 }
 </style><body class="m0 p0 height-all width-all">
 
-<article class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-3 " HIDDEN>
-  <div class="flex flex-column m-auto">
-    <h1 class="weight-600 m0 empower-impact break-word paint-">
-      <span class="inline-root empower-impact weight-600">resilient<span class="inline-root weight-300">(CSS)</span></span>
-    </h1>
-  </div>
-</article>
-
 <article class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-3 ">
   <div class="flex flex-column m-auto">
     <h1 class="weight-600 m0 empower-impact break-word paint-">
@@ -184,19 +176,6 @@ Difficult to change
   </div>
 </article>
 
-<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 " HIDDEN>
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
-.app {
-  .search {
-    --antipattern: mutation;
-    --antipattern: nesting;
-  }
-}
-</code></pre>
-  </div>
-</article>
-
 <!--
 feedback
 how
@@ -234,38 +213,29 @@ resilient:
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
-.context {
-  .search {
-    --antipattern: mutation;
-    --antipattern: nesting;
-    --effect: erratic;
-    --effect: brittle;
-    --effect: lost;
+.drawer {
+  .header {
+    .title {
+      --effect: brittle;
+      --effect: unfindable
+      --effect: overspecific;
+    }
   }
 }
 </code></pre>
   </div>
 </article>
 
-<pre class="weight-800 empower-" HIDDEN><code>
-.app {
-  .app-header {
-    h1 {
-      --antipattern: mutation;
-      --design: inconsistent;
-      --quality: unpredictable;
-      --debugging: unreachable;
-      --change: brittle;
-    }
-  }
-}
-</code></pre>
 
-<ul class="m0 p0 mb-auto empower-impact self-end" HIDDEN>
-  <li class="m0 weight-400">Contextual overrides
-  <li class="m0 weight-400">Unpredictable
-  <li class="m0 weight-400">Unreachable
-</ul>
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-4 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.drawer-box {}
+.drawer-header {}
+.drawer-title {}
+</code></pre>
+  </div>
+</article>
 
 <article class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-4 ">
   <div class="flex flex-column m-auto">
@@ -273,13 +243,49 @@ resilient:
 .flat {
   --effect: findable;
   --effect: debuggable;
-  --effect: refactorable;
+  --effect: flexible;
+  --effect: reusable;
   --effect: performant;
 }
 </code></pre>
   </div>
 </article>
 
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.context {
+  .search {
+    --antipattern: mutation;
+    --antipattern: nesting;
+  }
+}
+</code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.app {
+  .app-header {
+    h1 {
+      --design: inconsistent;
+      --quality: unpredictable;
+      --debugging: unfindable;
+      --change: brittle;
+    }
+  }
+}
+</code></pre>
+  </div>
+</article>
+
+<ul class="m0 p0 mb-auto empower-impact self-end" HIDDEN>
+  <li class="m0 weight-400">Contextual overrides
+  <li class="m0 weight-400">Unpredictable
+  <li class="m0 weight-400">Unreachable
+</ul>
 
 <article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
   <div class="flex flex-column m-auto">
@@ -289,15 +295,17 @@ resilient:
   </div>
 </article>
 
-<pre class="weight-800 empower-" HIDDEN><code>
+
+<article class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800"><code>
 .coupling {
-  --antipattern: mutation;
-  --design: inconsistent;
-  --quality: unpredictable;
-  --debugging: unreachable;
-  --change: brittle;
+  --effect: dependence;
+  --effect: bloat;
 }
 </code></pre>
+  </div>
+</article>
 
 <article class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-4 ">
   <div class="flex flex-column m-auto">
@@ -312,18 +320,9 @@ resilient:
   </div>
 </article>
 
-<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-8 ">
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-4 ">
   <div class="flex flex-column m-auto">
-    <h1 class="weight-800 m0 mb2 empower-impact break-word paint-">
-      Strategies
-    </h1>
-    <ul class="m0 mb-auto empower-heart self-end">
-      <li class="m0 weight-400">Property architecture
-      <li class="m0 weight-400">Design destructuring
-      <li class="m0 weight-400">Specificity levelling
-      <li class="m0 weight-400">Cascade choreo
-      <li class="m0 weight-400">Linting
-    </ul>
+    <p class="empower-proud p4 prose">Composition affords dimensions of change
   </div>
 </article>
 
@@ -406,5 +405,20 @@ resilient:
   data-margin="left-dense"
 &gt;
 </code></pre>
+  </div>
+</article>
+
+<article class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-8 ">
+  <div class="flex flex-column m-auto">
+    <h1 class="weight-800 m0 mb2 empower-impact break-word paint-">
+      Strategies
+    </h1>
+    <ul class="m0 mb-auto empower-heart self-end">
+      <li class="m0 weight-400">Property architecture
+      <li class="m0 weight-400">Design destructuring
+      <li class="m0 weight-400">Specificity levelling
+      <li class="m0 weight-400">Cascade choreo
+      <li class="m0 weight-400">Linting
+    </ul>
   </div>
 </article>
