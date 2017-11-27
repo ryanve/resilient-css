@@ -55,7 +55,7 @@
 }
 .paint-9 {
   color: Black;
-  background-color: Orange;
+  background-color: Pink;
 }
 .list-none {
   list-style-type: none;
@@ -124,7 +124,7 @@
   </div>
 </article>
 
-<article id="mutation" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+<article id="mutation" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-9 ">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 --antipattern: mutation;
@@ -170,7 +170,26 @@ Difficult to change
   --effect: erratic; <!-- unpredictable -->
   --effect: bugs;
   --effect: blocking; <!-- fear -->
-  --effect: buried; <!-- undocumented -->
+}
+</code></pre>
+  </div>
+</article>
+
+<article id="waterfall" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1">
+  <div class="flex flex-column m-auto">
+    <p class="prose">CSS rules that behave differently in different parts of an app are <b>erratic</b>.
+    <p class="prose">Erraticness causes <b>bugs</b>. Contextual bugs are difficult to reproduce.
+    <p class="prose">Mutation causes <b>blocking</b>. Mutation inhibits change in your codebase.
+  </div>
+</article>
+
+<article id="cost" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.mutable {
+  --cost: time;
+  --cost: quality;
+  --cost: frustration;
 }
 </code></pre>
   </div>
@@ -193,16 +212,15 @@ resilient:
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 .immutable {
-  --effect: predictable;
-  --effect: confident;
-  --effect: stable;
-  --effect: refactorable;
+  --benefit: predictable;
+  --benefit: stable;
+  --benefit: agile;
 }
 </code></pre>
   </div>
 </article>
 
-<article id="nesting" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1">
+<article id="nesting" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-9">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 --antipattern: nesting;
@@ -216,9 +234,9 @@ resilient:
 .drawer {
   .header {
     .title {
-      --effect: brittle;
-      --effect: unfindable
-      --effect: overspecific;
+      --problem: brittle;
+      --problem: unfindable
+      --problem: overspecific;
     }
   }
 }
@@ -226,6 +244,21 @@ resilient:
   </div>
 </article>
 
+<article id="elemental" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+  <div class="flex flex-column m-auto">
+<pre class="weight-800 empower-"><code>
+.drawer {
+  header {
+    h1 {
+      --problem: brittle;
+      --problem: unfindable
+      --problem: overspecific;
+    }
+  }
+}
+</code></pre>
+  </div>
+</article>
 
 <article id="flattened" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-4 ">
   <div class="flex flex-column m-auto">
@@ -241,21 +274,21 @@ resilient:
   <div class="flex flex-column m-auto">
 <pre class="weight-800"><code>
 .flat {
-  --effect: findable;
-  --effect: debuggable;
-  --effect: flexible;
-  --effect: reusable;
-  --effect: performant;
+  --benefit: findable;
+  --benefit: debuggable;
+  --benefit: interoperable;
+  --benefit: reusable;
+  --benefit: performant;
 }
 </code></pre>
   </div>
 </article>
 
-<article id="contextual" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+<article id="contextual" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-7 ">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 .context {
-  .search {
+  .component {
     --antipattern: mutation;
     --antipattern: nesting;
   }
@@ -264,30 +297,7 @@ resilient:
   </div>
 </article>
 
-<article id="elemental" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
-.app {
-  .app-header {
-    h1 {
-      --design: inconsistent;
-      --quality: unpredictable;
-      --debugging: unfindable;
-      --change: brittle;
-    }
-  }
-}
-</code></pre>
-  </div>
-</article>
-
-<ul class="m0 p0 mb-auto empower-impact self-end" HIDDEN>
-  <li class="m0 weight-400">Contextual overrides
-  <li class="m0 weight-400">Unpredictable
-  <li class="m0 weight-400">Unreachable
-</ul>
-
-<article id="coupling" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-1 ">
+<article id="coupling" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-9">
   <div class="flex flex-column m-auto">
 <pre class="weight-800 empower-"><code>
 --antipattern: coupling;
@@ -310,8 +320,8 @@ resilient:
   <div class="flex flex-column m-auto">
 <pre class="weight-800"><code>
 .coupling {
-  --effect: dependence;
-  --effect: bloat;
+  --cost: dependence;
+  --cost: bloat;
 }
 </code></pre>
   </div>
@@ -321,10 +331,10 @@ resilient:
   <div class="flex flex-column m-auto">
 <pre class="weight-800"><code>
 .composable {
-  --effect: flexible;
-  --effect: learnable;
-  --effect: systematic;
-  --effect: performant;
+  --benefit: flexible;
+  --benefit: learnable;
+  --benefit: systematic;
+  --benefit: performant;
 }
 </code></pre>
   </div>
@@ -332,7 +342,7 @@ resilient:
 
 <article id="dimensions" class="flex height-viewport height-fit items-center paint-0 m0 empower-impact border-thick border-dashed paint-4 ">
   <div class="flex flex-column m-auto">
-    <p class="empower-proud p4 prose">Composition affords dimensions of change
+    <p class="empower-proud prose">Composition affords <b>dimensions</b> of change. Design destructuring...
   </div>
 </article>
 
