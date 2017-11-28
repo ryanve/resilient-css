@@ -1,4 +1,5 @@
 # Resilient CSS
+## [Slides](https://ryanve.github.io/resilient-css/)
 
 ## Blurb
 
