@@ -630,7 +630,7 @@ resilient:
 
   function frag(target) {
     var id = target.id
-    if (null == id) throw new Error
+    if (!id) throw new Error(target.hasAttribute("id") ? "Empty [id]" : "Missing [id]")
     return "#" + id
   }
 
@@ -640,7 +640,7 @@ resilient:
     var left = code === 37
     var right = code === 39
     if (!left && !right) return
-    var jumps = slice.call(doc.querySelectorAll("article[id]")).map(frag)
+    var jumps = slice.call(doc.querySelectorAll("article[id]:not([hidden])")).map(frag)
     var current = loc.hash
     if (!current) return right && jumps[win.pageYOffset ? 0 : 1] || stay
     return jumps.some(function(jump, i) {
