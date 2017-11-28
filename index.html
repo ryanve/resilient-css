@@ -5,8 +5,6 @@
 <title>Resilient CSS</title>
 <link rel="stylesheet" href="https://unpkg.com/spacing@0.1.0/main.css">
 <link rel="stylesheet" href="https://unpkg.com/empower.css@0.1.0/empower.css">
-<link rel="stylesheet" href="https://unpkg.com/area.css@0.4.0/area.css">
-
 <style>
 * { box-sizing: border-box }
 :link { color: inherit }
@@ -85,6 +83,33 @@
 .content-between { align-content: space-between }
 .content-around { align-content: space-around }
 .content-stretch { align-content: stretch }
+/* via https://npm.im/area.css */
+.width-zero { width: 0 }
+.width-all { width: 100% }
+.width-em { width: 1em }
+.width-rem { width: 1rem }
+.width-viewport { width: 100vw }
+.width-auto { width: auto }
+.height-zero { height: 0 }
+.height-all { height: 100% }
+.height-em { height: 1em }
+.height-rem { height: 1rem }
+.height-viewport { height: 100vh }
+.height-auto { height: auto }
+.max-none { max-width: none; max-height: none }
+.max-zero { max-width: 0; max-height: 0 }
+.min-zero { min-width: 0; min-height: 0 }
+.min-auto { min-width: auto; min-height: auto }
+.max-viewport { max-width: 100vw; max-height: 100vh }
+.min-viewport { min-width: 100vw; min-height: 100vh }
+.width-free { max-width: none }
+.width-fit { max-width: 100% }
+.width-clip { max-width: 0 }
+.width-force { min-width: 100% }
+.height-free { max-height: none }
+.height-fit { max-height: 100% }
+.height-clip { max-height: 0 }
+.height-force { min-height: 100% }
 </style>
 
 <body class="m0 p0 height-all width-all">
