@@ -630,7 +630,7 @@ resilient:
 
   function frag(target) {
     var id = target.id
-    if (null == id) throw new Error
+    if (!id) throw new Error(target.hasAttribute("id") ? "Empty [id]" : "Missing [id]")
     return "#" + id
   }
 
