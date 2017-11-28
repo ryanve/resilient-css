@@ -8,6 +8,8 @@
 <link rel="shortlink" href="http://bit.ly/resilient-css">
 <style>
 * { box-sizing: border-box }
+:focus { outline-color: currentColor }
+:link:not(:hover):not(:focus) { text-decoration: none }
 :link { color: inherit; text-decoration-skip: ink }
 :visited { color: inherit }
 ::selection { color: Gold; background: Black }
@@ -237,35 +239,55 @@
 .empower-aware { font-size: var(--size-aware); line-height: var(--line-dense) }
 .empower-heart { font-size: var(--size-heart); line-height: var(--line-crush) }
 .empower-impact { font-size: var(--size-impact); line-height: var(--line-level) }
+.line-level { line-height: var(--line-level) }
+.line-crush { line-height: var(--line-crush) }
+.line-dense { line-height: var(--line-dense) }
+.line-proud { line-height: var(--line-proud) }
+.line-story { line-height: var(--line-story) }
+.size-story { font-size: var(--size-story) }
+.size-proud { font-size: var(--size-proud) }
+.size-aware { font-size: var(--size-aware) }
+.size-heart { font-size: var(--size-heart) }
+.size-impact { font-size: var(--size-impact) }
 </style>
 
 <body class="m0 p0 height-all width-all">
 
-<article data-arrow id="welcome" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+<header data-arrow id="cover" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
   <div class="block-flex flex-column m-auto">
-    <h1 class="font-600 m0 empower-impact break-word paint-">
+    <h1 class="font-600 m0 empower-impact break-word">
       <span class="block-flow empower-impact font-600">Resilient</span>
       <span class="block-flow empower-impact font-300">CSS</span>
     </h1>
   </div>
+</header>
+
+<article data-arrow id="ryanve" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="m-auto empower-aware">
+    <a href="https://github.com/ryanve" class="block-table mb2 empower-impact font-600">@ryanve</a>
+    <span class="block-table line-level">Ryan Van Etten</span>
+    <span class="block-table line-level">UX Engineer</span>
+    <a class="block-table line-level" href="https://plangrid.github.io">PlanGrid</a>
+  </div>
 </article>
 
 <article data-arrow id="agenda" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="m-auto">
     <div class="m-auto">
-      <ol class="p0">
-        <li class="m0 mb3">Define resilient CSS
+      <h1 class="font-600 m0 empower-impact">
+        #agenda
+      </h1>
+      <ol class="list-none p0 empower-aware">
+        <li class="m0 mb3">Define <b>resilient CSS</b>
         <li class="m0 mb3">Show why it makes sense
         <li class="m0">Apply to design systems
       </ol>
     </div>
-  </div>
 </article>
 
 <article data-arrow id="criteria" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
   <div class="block-flex flex-column m-auto">
     <p class="m0 mb2 empower-impact">
-      <b>Resilient</b> means <b>durable</b> and <b>flexible</b>.
+      <dfn class="font-same">Resilient</dfn> means <b>durable</b> and <b>flexible</b>.
     </p>
   </div>
 </article>
