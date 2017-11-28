@@ -7,7 +7,10 @@
 <link rel="shortlink" href="https://goo.gl/ouGBF5">
 <link rel="shortlink" href="http://bit.ly/resilient-css">
 <style>
-* { box-sizing: border-box }
+* { box-sizing: border-box; word-wrap: break-word }
+pre { max-width: 50em }
+@media (max-width: 70em) { pre { white-space: pre-wrap }}
+@media (max-width: 40em) { pre { white-space: pre-line }}
 :focus { outline-color: currentColor }
 :link:not(:hover):not(:focus) { text-decoration: none }
 :link { color: inherit; text-decoration-skip: ink }
@@ -300,7 +303,7 @@
   </div>
 </article>
 
-<article data-arrow id="thesis" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="thesis" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .resilient {
@@ -312,7 +315,7 @@
   </div>
 </article>
 
-<article data-arrow id="oppose" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="oppose" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .not-resilient {
@@ -324,7 +327,7 @@
   </div>
 </article>
 
-<article data-arrow id="mutation" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="mutation" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: mutation;
@@ -332,14 +335,14 @@
   </div>
 </article>
 
-<article data-arrow id="overriding" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="overriding" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
     <h3 class="font-same empower-proud mb2"><abbr class="font-300">aka</abbr> <b>overriding</b></h3>
     <p class="prose m0 font-400">across <b class="font-500">modules</b> or <b class="font-500">contexts</b>
   </div>
 </article>
 
-<article data-arrow id="original" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="original" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">button.css</h3>
 <pre class="m0 p0 font-800 empower-"><code>
@@ -348,7 +351,7 @@
   </div>
 </article>
 
-<article data-arrow id="codebase" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="codebase" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">app.css</h3>
 <pre class="m0 p0 font-800 empower-"><code>
@@ -357,7 +360,7 @@
   </div>
 </article>
 
-<article data-arrow id="mutable" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="mutable" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .mutable {
@@ -369,7 +372,7 @@
   </div>
 </article>
 
-<article data-arrow id="waterfall" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="waterfall" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
     <p class="prose">CSS rules that behave differently in different contexts are <b>erratic</b>.
     <p class="prose">Erratic means <b>buggy</b>. Contextual bugs are difficult to reproduce.
@@ -377,7 +380,7 @@
   </div>
 </article>
 
-<article data-arrow id="cost" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="cost" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .mutable {
@@ -389,7 +392,7 @@
   </div>
 </article>
 
-<article data-arrow id="immutable" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="immutable" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .immutable {
@@ -401,7 +404,7 @@
   </div>
 </article>
 
-<article data-arrow id="nesting" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="nesting" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: nesting;
@@ -409,7 +412,7 @@
   </div>
 </article>
 
-<article data-arrow id="deep" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="deep" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .drawer {
@@ -425,7 +428,7 @@
   </div>
 </article>
 
-<article data-arrow id="flattened" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="flattened" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .drawer-box {}
@@ -435,7 +438,7 @@
   </div>
 </article>
 
-<article data-arrow id="flat" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="flat" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
 <pre class="font-800"><code>
 .flat {
@@ -449,7 +452,7 @@
   </div>
 </article>
 
-<article data-arrow id="contextual" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="contextual" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 .context {
@@ -462,7 +465,7 @@
   </div>
 </article>
 
-<article data-arrow id="coupling" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="coupling" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: coupling;
@@ -470,7 +473,7 @@
   </div>
 </article>
 
-<article data-arrow id="coupled" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="coupled" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800"><code>
 .coupled {
@@ -481,7 +484,7 @@
   </div>
 </article>
 
-<article data-arrow id="bloat" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="bloat" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <pre class="font-800"><code>
 .coupling {
@@ -492,7 +495,7 @@
   </div>
 </article>
 
-<article data-arrow id="temptation" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article data-arrow id="temptation" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
     <p class="prose">Coupling <b>depends</b> on sharing.
     <p class="prose">Coupling <b>affects</b> inheritance.
@@ -500,7 +503,7 @@
   </div>
 </article>
 
-<article data-arrow id="composable" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="composable" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
 <pre class="font-800"><code>
 .composable {
@@ -513,21 +516,21 @@
   </div>
 </article>
 
-<article data-arrow id="dimensions" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="dimensions" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose font-400">Composition affords dimensions of change.
     <p class="prose font-600">Destructure design.
   </div>
 </article>
 
-<article data-arrow id="challenge" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="challenge" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <h2 class="font-same font-600">#challenge</h2>
     <p class="prose font-400">Compose approachably.
   </div>
 </article>
 
-<article data-arrow id="balance" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="balance" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose"><b>Balance</b> flexibility vs. governance.
     <p class="prose font-300">If developers sidestep the system then governance is too extreme.
@@ -596,14 +599,14 @@
   </div>
 </article>
 
-<article data-arrow id="centric" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="centric" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose font-700">Property-centric architecture
     <p class="prose font-400">Separate files such that the order you load them has no effect on cascade.
   </div>
 </article>
 
-<article data-arrow id="structure" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="structure" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>alignment.css
@@ -616,7 +619,7 @@
   </div>
 </article>
 
-<article data-arrow id="color" class="block-flex height-viewport height-fit width-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article data-arrow id="color" class="block-flex height-viewport height-fit width-fit items-center m0 p1 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>tone.css
