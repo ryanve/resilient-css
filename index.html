@@ -3,7 +3,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resilient CSS</title>
-<link rel="stylesheet" href="https://unpkg.com/empower.css@0.1.0/empower.css">
 <style>
 * { box-sizing: border-box }
 :link { color: inherit }
@@ -173,6 +172,68 @@
 .ml0-last:last-child { margin-left: 0 }
 .mr0-last:last-child { margin-right: 0 }
 .mb0-last:last-child { margin-bottom: 0 }
+/* via https://npm.im/empower.css */
+.empower {
+  --retrace-30: 3;
+  --retrace-29: 2.90173655;
+  --retrace-28: 2.85410197;
+  --retrace-27: 2.76393202;
+  --retrace-26: 2.61803399;
+  --retrace-25: 2.5;
+  --retrace-24: 2.38196601;
+  --retrace-23: 2.23606798;
+  --retrace-22: 2.14589803;
+  --retrace-21: 2.09016994;
+  --retrace-20: 2;
+  --retrace-19: 1.90173655;
+  --retrace-18: 1.85410197;
+  --retrace-17: 1.76393202;
+  --retrace-16: 1.61803399;
+  --retrace-15: 1.5;
+  --retrace-14: 1.38196601;
+  --retrace-13: 1.23606798;
+  --retrace-12: 1.14589803;
+  --retrace-11: 1.09016994;
+  --retrace-10: 1;
+  --factor-impact: var(--retrace-18);
+  --factor-heart: var(--retrace-16);
+  --factor-aware: var(--retrace-14);
+  --factor-proud: var(--retrace-12);
+  --factor-story: var(--retrace-10);
+  --size-impact: calc(var(--factor-impact) * 1em);
+  --size-heart: calc(var(--factor-heart) * 1em);
+  --size-aware: calc(var(--factor-aware) * 1em);
+  --size-proud: calc(var(--factor-proud) * 1em);
+  --size-story: calc(var(--factor-story) * 1em);
+  --line-story: var(--retrace-15);
+  --line-group: var(--retrace-14);
+  --line-dense: var(--retrace-13);
+  --line-crush: var(--retrace-12);
+  --line-level: var(--retrace-11);
+}
+@media (min-height: 30em) {
+  .empower {
+    --line-story: var(--retrace-16);
+    --line-group: var(--retrace-15);
+    --line-dense: var(--retrace-14);
+    --line-crush: var(--retrace-13);
+    --line-level: var(--retrace-12);
+  }
+}
+@media (min-width: 50em) {
+  .empower {
+    --factor-impact: var(--retrace-20);
+    --factor-heart: var(--retrace-17);
+    --factor-aware: var(--retrace-15);
+    --factor-proud: var(--retrace-13);
+    --factor-story: var(--retrace-10);
+  }
+}
+.empower-story { font-size: var(--size-story); line-height: var(--line-story) }
+.empower-proud { font-size: var(--size-proud); line-height: var(--line-group) }
+.empower-aware { font-size: var(--size-aware); line-height: var(--line-dense) }
+.empower-heart { font-size: var(--size-heart); line-height: var(--line-crush) }
+.empower-impact { font-size: var(--size-impact); line-height: var(--line-level) }
 </style>
 
 <body class="m0 p0 height-all width-all">
