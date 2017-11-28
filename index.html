@@ -1,70 +1,253 @@
 <!DOCTYPE html>
-<html lang="en-US" class="empower empower-story paint-jam tx-sans">
+<html lang="en-US" class="empower empower-story paint-jam font-sans">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resilient CSS</title>
-<link rel="stylesheet" href="https://unpkg.com/flexboxes@0.7.0/main.css">
-<link rel="stylesheet" href="https://unpkg.com/spacing@0.1.0/main.css">
-<link rel="stylesheet" href="https://unpkg.com/empower.css@0.1.0/empower.css">
-<link rel="stylesheet" href="https://unpkg.com/tx.css@0.1.0/tx.css">
-<link rel="stylesheet" href="https://unpkg.com/weight.css@0.1.0/weight.css">
-<link rel="stylesheet" href="https://unpkg.com/flow.css@0.5.0/flow.css">
-<link rel="stylesheet" href="https://unpkg.com/area.css@0.4.0/area.css">
-<link rel="stylesheet" href="https://unpkg.com/border.css@0.10.0/border.css">
-<link rel="stylesheet" href="https://unpkg.com/bullet.css@0.2.0/bullet.css">
-
 <style>
+* { box-sizing: border-box }
+:link { color: inherit }
+:visited { color: inherit }
+::selection { color: Gold; background: Black }
+.paint-bee { color: Black; background-color: Gold }
+.paint-jam { color: Azure; background-color: BlueViolet }
+.paint-air { color: Black; background-color: Aqua }
+.font-same { font: inherit }
+.font-sans { font-family: sans-serif }
+.font-100 { font-weight: 100 }
+.font-200 { font-weight: 200 }
+.font-300 { font-weight: 300 }
+.font-400 { font-weight: 400 }
+.font-500 { font-weight: 500 }
+.font-600 { font-weight: 600 }
+.font-700 { font-weight: 700 }
+.font-800 { font-weight: 800 }
+.font-900 { font-weight: 900 }
+.break-word { word-wrap: break-word }
+.list-none { list-style-type: none }
+.prose { max-width: 20em; margin-left: auto; margin-right: auto }
+/* via https://npm.im/border.css */
+.border-none { border-style: none }
+.border-inset { border-style: inset }
+.border-groove { border-style: groove }
+.border-outset { border-style: outset }
+.border-ridge { border-style: ridge }
+.border-dotted { border-style: dotted }
+.border-dashed { border-style: dashed }
+.border-solid { border-style: solid }
+.border-double { border-style: double }
+.border-hidden { border-style: hidden }
+.border-trim { border-width: 0 }
+.border-thin { border-width: thin }
+.border-medium { border-width: medium }
+.border-thick { border-width: thick }
+/* via https://npm.im/flow.css */
+.inline-flow { display: inline }
+.inline-root { display: inline-block }
+.inline-table { display: inline-table }
+.inline-flex { display: inline-flex }
+.block-flow { display: block }
+.block-root { display: block; display: flow-root }
+.block-table { display: table }
+.block-flex { display: flex }
+/* respect [hidden] regardless */
 [hidden] { display: none }
-::selection {
-  color: Gold;
-  background: Black;
+/* via https://npm.im/flexboxes */
+.flex-row { flex-direction: row }
+.flex-row-reverse { flex-direction: row-reverse }
+.flex-column { flex-direction: column }
+.flex-column-reverse { flex-direction: column-reverse }
+.flex-wrap { flex-wrap: wrap }
+.flex-nowrap { flex-wrap: nowrap }
+.flex-wrap-reverse { flex-wrap: wrap-reverse }
+.flex-auto { flex: 1 1 auto }
+.items-start { align-items: flex-start }
+.items-end { align-items: flex-end }
+.items-center { align-items: center }
+.items-baseline { align-items: baseline }
+.items-stretch { align-items: stretch }
+.self-start { align-self: flex-start }
+.self-end { align-self: flex-end }
+.self-center { align-self: center }
+.self-baseline { align-self: baseline }
+.self-stretch { align-self: stretch }
+.justify-start { justify-content: flex-start }
+.justify-end { justify-content: flex-end }
+.justify-center { justify-content: center }
+.justify-between { justify-content: space-between }
+.justify-around { justify-content: space-around }
+.content-start { align-content: flex-start }
+.content-end { align-content: flex-end }
+.content-center { align-content: center }
+.content-between { align-content: space-between }
+.content-around { align-content: space-around }
+.content-stretch { align-content: stretch }
+/* via https://npm.im/area.css */
+.width-zero { width: 0 }
+.width-all { width: 100% }
+.width-em { width: 1em }
+.width-rem { width: 1rem }
+.width-viewport { width: 100vw }
+.width-auto { width: auto }
+.height-zero { height: 0 }
+.height-all { height: 100% }
+.height-em { height: 1em }
+.height-rem { height: 1rem }
+.height-viewport { height: 100vh }
+.height-auto { height: auto }
+.max-none { max-width: none; max-height: none }
+.max-zero { max-width: 0; max-height: 0 }
+.min-zero { min-width: 0; min-height: 0 }
+.min-auto { min-width: auto; min-height: auto }
+.max-viewport { max-width: 100vw; max-height: 100vh }
+.min-viewport { min-width: 100vw; min-height: 100vh }
+.width-free { max-width: none }
+.width-fit { max-width: 100% }
+.width-clip { max-width: 0 }
+.width-force { min-width: 100% }
+.height-free { max-height: none }
+.height-fit { max-height: 100% }
+.height-clip { max-height: 0 }
+.height-force { min-height: 100% }
+/* via https://npm.im/spacing */
+.p0 { padding: 0 }
+.p1 { padding: .5rem }
+.p2 { padding: 1rem }
+.p3 { padding: 2rem }
+.p4 { padding: 4rem }
+.pt0 { padding-top: 0 }
+.pt1 { padding-top: .5rem }
+.pt2 { padding-top: 1rem }
+.pt3 { padding-top: 2rem }
+.pt4 { padding-top: 4rem }
+.pl0 { padding-left: 0 }
+.pl1 { padding-left: .5rem }
+.pl2 { padding-left: 1rem }
+.pl3 { padding-left: 2rem }
+.pl4 { padding-left: 4rem }
+.pr0 { padding-right: 0 }
+.pr1 { padding-right: .5rem }
+.pr2 { padding-right: 1rem }
+.pr3 { padding-right: 2rem }
+.pr4 { padding-right: 4rem }
+.pb0 { padding-bottom: 0 }
+.pb1 { padding-bottom: .5rem }
+.pb2 { padding-bottom: 1rem }
+.pb3 { padding-bottom: 2rem }
+.pb4 { padding-bottom: 4rem }
+.m0 { margin: 0 }
+.m1 { margin: .5rem }
+.m2 { margin: 1rem }
+.m3 { margin: 2rem }
+.m4 { margin: 4rem }
+.m-auto { margin: auto }
+.mt0 { margin-top: 0 }
+.mt1 { margin-top: .5rem }
+.mt2 { margin-top: 1rem }
+.mt3 { margin-top: 2rem }
+.mt4 { margin-top: 4rem }
+.ml0 { margin-left: 0 }
+.ml1 { margin-left: .5rem }
+.ml2 { margin-left: 1rem }
+.ml3 { margin-left: 2rem }
+.ml4 { margin-left: 4rem }
+.mr0 { margin-right: 0 }
+.mr1 { margin-right: .5rem }
+.mr2 { margin-right: 1rem }
+.mr3 { margin-right: 2rem }
+.mr4 { margin-right: 4rem }
+.mb0 { margin-bottom: 0 }
+.mb1 { margin-bottom: .5rem }
+.mb2 { margin-bottom: 1rem }
+.mb3 { margin-bottom: 2rem }
+.mb4 { margin-bottom: 4rem }
+.mt-auto { margin-top: auto }
+.ml-auto { margin-left: auto }
+.mr-auto { margin-right: auto }
+.mb-auto { margin-bottom: auto }
+.mt0-first:first-child { margin-top: 0 }
+.ml0-first:first-child { margin-left: 0 }
+.mr0-first:first-child { margin-right: 0 }
+.mb0-first:first-child { margin-bottom: 0 }
+.mt0-last:last-child { margin-top: 0 }
+.ml0-last:last-child { margin-left: 0 }
+.mr0-last:last-child { margin-right: 0 }
+.mb0-last:last-child { margin-bottom: 0 }
+/* via https://npm.im/empower.css */
+.empower {
+  --retrace-30: 3;
+  --retrace-29: 2.90173655;
+  --retrace-28: 2.85410197;
+  --retrace-27: 2.76393202;
+  --retrace-26: 2.61803399;
+  --retrace-25: 2.5;
+  --retrace-24: 2.38196601;
+  --retrace-23: 2.23606798;
+  --retrace-22: 2.14589803;
+  --retrace-21: 2.09016994;
+  --retrace-20: 2;
+  --retrace-19: 1.90173655;
+  --retrace-18: 1.85410197;
+  --retrace-17: 1.76393202;
+  --retrace-16: 1.61803399;
+  --retrace-15: 1.5;
+  --retrace-14: 1.38196601;
+  --retrace-13: 1.23606798;
+  --retrace-12: 1.14589803;
+  --retrace-11: 1.09016994;
+  --retrace-10: 1;
+  --factor-impact: var(--retrace-18);
+  --factor-heart: var(--retrace-16);
+  --factor-aware: var(--retrace-14);
+  --factor-proud: var(--retrace-12);
+  --factor-story: var(--retrace-10);
+  --size-impact: calc(var(--factor-impact) * 1em);
+  --size-heart: calc(var(--factor-heart) * 1em);
+  --size-aware: calc(var(--factor-aware) * 1em);
+  --size-proud: calc(var(--factor-proud) * 1em);
+  --size-story: calc(var(--factor-story) * 1em);
+  --line-story: var(--retrace-15);
+  --line-group: var(--retrace-14);
+  --line-dense: var(--retrace-13);
+  --line-crush: var(--retrace-12);
+  --line-level: var(--retrace-11);
 }
-* {
-  box-sizing: border-box;
+@media (min-height: 30em) {
+  .empower {
+    --line-story: var(--retrace-16);
+    --line-group: var(--retrace-15);
+    --line-dense: var(--retrace-14);
+    --line-crush: var(--retrace-13);
+    --line-level: var(--retrace-12);
+  }
 }
-.break-word {
-  word-wrap: break-word;
+@media (min-width: 50em) {
+  .empower {
+    --factor-impact: var(--retrace-20);
+    --factor-heart: var(--retrace-17);
+    --factor-aware: var(--retrace-15);
+    --factor-proud: var(--retrace-13);
+    --factor-story: var(--retrace-10);
+  }
 }
-.paint-bee {
-  color: Black;
-  background-color: Gold;
-}
-.paint-jam {
-  color: Azure;
-  background-color: BlueViolet;
-}
-.paint-air {
-  color: Black;
-  background-color: Aqua;
-}
-.list-none {
-  list-style-type: none;
-}
-:link,
-:visited {
-  color: inherit;
-}
-.button {
-  padding: 1rem;
-  font: inherit;
-}
-.prose {
-  max-width: 20em;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style><body class="m0 p0 height-all width-all">
+.empower-story { font-size: var(--size-story); line-height: var(--line-story) }
+.empower-proud { font-size: var(--size-proud); line-height: var(--line-group) }
+.empower-aware { font-size: var(--size-aware); line-height: var(--line-dense) }
+.empower-heart { font-size: var(--size-heart); line-height: var(--line-crush) }
+.empower-impact { font-size: var(--size-impact); line-height: var(--line-level) }
+</style>
 
-<article id="welcome" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-    <h1 class="weight-600 m0 empower-impact break-word paint-">
-      <span class="block-flow empower-impact weight-600">Resilient</span>
-      <span class="block-flow empower-impact weight-300">CSS</span>
+<body class="m0 p0 height-all width-all">
+
+<article id="welcome" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+    <h1 class="font-600 m0 empower-impact break-word paint-">
+      <span class="block-flow empower-impact font-600">Resilient</span>
+      <span class="block-flow empower-impact font-300">CSS</span>
     </h1>
   </div>
 </article>
 
-<article id="agenda" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+<article id="agenda" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
   <div class="m-auto">
     <div class="m-auto">
       <ol class="p0">
@@ -76,25 +259,25 @@
   </div>
 </article>
 
-<article id="criteria" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="criteria" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
     <p class="m0 mb2 empower-impact">
       <b>Resilient</b> means <b>durable</b> and <b>flexible</b>.
     </p>
   </div>
 </article>
 
-<article id="ponder" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="ponder" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
     <p class="m0 empower-impact">
       When is <b>CSS</b> resilient?
     </p>
   </div>
 </article>
 
-<article id="thesis" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="thesis" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .resilient {
   --when: immutable;
   --when: flat;
@@ -104,9 +287,9 @@
   </div>
 </article>
 
-<article id="oppose" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="oppose" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .not-resilient {
   --when: mutable;
   --when: nested;
@@ -116,33 +299,33 @@
   </div>
 </article>
 
-<article id="mutation" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="mutation" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 --antipattern: mutation;
 </code></pre>
   </div>
 </article>
 
-<article id="mutating" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="mutating" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
     <p class="empower-proud p4 prose">If you define styles and then override them in another <b>context</b> or <b>module</b> then you are mutating them.
   </div>
 </article>
 
-<article id="original" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="original" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">button.css</h3>
-<pre class="m0 p0 weight-800 empower-"><code>
+<pre class="m0 p0 font-800 empower-"><code>
 .button {}
 </code></pre>
   </div>
 </article>
 
-<article id="codebase" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="codebase" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">app.css</h3>
-<pre class="m0 p0 weight-800 empower-"><code>
+<pre class="m0 p0 font-800 empower-"><code>
 47 results found for ".button"
 </code></pre>
   </div>
@@ -155,9 +338,9 @@ Unreachable
 Difficult to change
 -->
 
-<article id="mutable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="mutable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .mutable {
   --effect: erratic; <!-- unpredictable -->
   --effect: bugs;
@@ -167,17 +350,17 @@ Difficult to change
   </div>
 </article>
 
-<article id="waterfall" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="waterfall" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
     <p class="prose">CSS rules that behave differently in different parts of an app are <b>erratic</b>.
     <p class="prose">Erraticness causes <b>bugs</b>. Contextual bugs are difficult to reproduce.
     <p class="prose">Mutation causes <b>blocking</b>. Mutation inhibits change in your codebase.
   </div>
 </article>
 
-<article id="cost" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="cost" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .mutable {
   --cost: time;
   --cost: quality;
@@ -200,9 +383,9 @@ resilient:
   flexible;
 -->
 
-<article id="immutable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="immutable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .immutable {
   --benefit: predictable;
   --benefit: stable;
@@ -212,17 +395,17 @@ resilient:
   </div>
 </article>
 
-<article id="nesting" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="nesting" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 --antipattern: nesting;
 </code></pre>
   </div>
 </article>
 
-<article id="deep" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="deep" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .drawer {
   .header {
     .title {
@@ -236,9 +419,9 @@ resilient:
   </div>
 </article>
 
-<article id="elemental" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="elemental" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .drawer {
   header {
     h1 {
@@ -252,9 +435,9 @@ resilient:
   </div>
 </article>
 
-<article id="flattened" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="flattened" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .drawer-box {}
 .drawer-header {}
 .drawer-title {}
@@ -262,9 +445,9 @@ resilient:
   </div>
 </article>
 
-<article id="flat" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="flat" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 .flat {
   --benefit: findable;
   --benefit: debuggable;
@@ -276,9 +459,9 @@ resilient:
   </div>
 </article>
 
-<article id="contextual" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="contextual" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 .context {
   .component {
     --antipattern: mutation;
@@ -289,17 +472,17 @@ resilient:
   </div>
 </article>
 
-<article id="coupling" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800 empower-"><code>
+<article id="coupling" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800 empower-"><code>
 --antipattern: coupling;
 </code></pre>
   </div>
 </article>
 
-<article id="coupled" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="coupled" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 .coupled {
   background: Snow;
   flex-basis: 47em;
@@ -308,9 +491,9 @@ resilient:
   </div>
 </article>
 
-<article id="bloat" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="bloat" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 .coupling {
   --cost: dependence;
   --cost: bloat;
@@ -319,7 +502,7 @@ resilient:
   </div>
 </article>
 
-<article id="temptation" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="temptation" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
     <p class="prose">Coupling <b>depends</b> on sharing.
     <p class="prose">Coupling <b>affects</b> inheritance.
@@ -327,9 +510,9 @@ resilient:
   </div>
 </article>
 
-<article id="composable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="composable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 .composable {
   --benefit: flexible;
   --benefit: learnable;
@@ -340,29 +523,29 @@ resilient:
   </div>
 </article>
 
-<article id="challenge" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="challenge" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
-    <h2 class="tx-face weight-600">#challenge</h2>
-    <p class="prose weight-400">Compose approachably.
+    <h2 class="font-same font-600">#challenge</h2>
+    <p class="prose font-400">Compose approachably.
   </div>
 </article>
 
-<article id="balance" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="balance" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose"><b>Balance</b> flexibility vs. governance.
-    <p class="prose weight-300">If developers sidestep the system then governance is too extreme.
+    <p class="prose font-300">If developers sidestep the system then governance is too extreme.
   </div>
 </article>
 
-<article id="dimensions" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="dimensions" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
     <p class="empower-proud prose">Composition affords <b>dimensions</b> of change. Design destructuring...
   </div>
 </article>
 
-<article id="tap-shape" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="tap-shape" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 &lt;button
   class="preset-tap shape-compact tone-primary"
 &gt;
@@ -370,9 +553,9 @@ resilient:
   </div>
 </article>
 
-<article id="tap-pad" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="tap-pad" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 &lt;button
   class="preset-box ix-tap pad-dense tone-primary"
 &gt;
@@ -380,9 +563,9 @@ resilient:
   </div>
 </article>
 
-<article id="spacing" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="spacing" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 &lt;button
   data-preset="control"
   data-shape="plush"
@@ -394,9 +577,9 @@ resilient:
   </div>
 </article>
 
-<article id="shelf" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="shelf" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 &lt;button
   data-preset="control"
   data-shape="plush"
@@ -408,9 +591,9 @@ resilient:
   </div>
 </article>
 
-<article id="left" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
-<pre class="weight-800"><code>
+<article id="left" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
+<pre class="font-800"><code>
 &lt;button
   data-control="control"
   data-shape="dense"
@@ -422,14 +605,14 @@ resilient:
   </div>
 </article>
 
-<article id="centric" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="centric" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
-    <p class="prose weight-700">Property-centric architecture
-    <p class="prose weight-400">Separate files such that the order you load them has no effect on cascade.
+    <p class="prose font-700">Property-centric architecture
+    <p class="prose font-400">Separate files such that the order you load them has no effect on cascade.
   </div>
 </article>
 
-<article id="structure" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="structure" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>alignment.css
@@ -442,7 +625,7 @@ resilient:
   </div>
 </article>
 
-<article id="color" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="color" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>tone.css
@@ -452,17 +635,17 @@ resilient:
   </div>
 </article>
 
-<article id="strategies" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
-    <h1 class="weight-800 m0 mb2 empower-impact break-word paint-">
+<article id="strategies" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
+    <h1 class="font-800 m0 mb2 empower-impact break-word paint-">
       Strategies
     </h1>
     <ul class="m0 mb-auto empower-heart self-end">
-      <li class="m0 weight-400">Property architecture
-      <li class="m0 weight-400">Design destructuring
-      <li class="m0 weight-400">Specificity levelling
-      <li class="m0 weight-400">Cascade choreo
-      <li class="m0 weight-400">Linting
+      <li class="m0 font-400">Property architecture
+      <li class="m0 font-400">Design destructuring
+      <li class="m0 font-400">Specificity levelling
+      <li class="m0 font-400">Cascade choreo
+      <li class="m0 font-400">Linting
     </ul>
   </div>
 </article>
