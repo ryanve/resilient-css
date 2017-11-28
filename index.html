@@ -3,7 +3,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resilient CSS</title>
-<link rel="stylesheet" href="https://unpkg.com/flexboxes@0.7.0/main.css">
 <link rel="stylesheet" href="https://unpkg.com/spacing@0.1.0/main.css">
 <link rel="stylesheet" href="https://unpkg.com/empower.css@0.1.0/empower.css">
 <link rel="stylesheet" href="https://unpkg.com/area.css@0.4.0/area.css">
@@ -49,16 +48,49 @@
 .inline-flow { display: inline }
 .inline-root { display: inline-block }
 .inline-table { display: inline-table }
+.inline-flex { display: inline-flex }
 .block-flow { display: block }
 .block-root { display: block; display: flow-root }
 .block-table { display: table }
+.block-flex { display: flex }
+/* respect [hidden] regardless */
 [hidden] { display: none }
+/* via https://npm.im/flexboxes */
+.flex-row { flex-direction: row }
+.flex-row-reverse { flex-direction: row-reverse }
+.flex-column { flex-direction: column }
+.flex-column-reverse { flex-direction: column-reverse }
+.flex-wrap { flex-wrap: wrap }
+.flex-nowrap { flex-wrap: nowrap }
+.flex-wrap-reverse { flex-wrap: wrap-reverse }
+.flex-auto { flex: 1 1 auto }
+.items-start { align-items: flex-start }
+.items-end { align-items: flex-end }
+.items-center { align-items: center }
+.items-baseline { align-items: baseline }
+.items-stretch { align-items: stretch }
+.self-start { align-self: flex-start }
+.self-end { align-self: flex-end }
+.self-center { align-self: center }
+.self-baseline { align-self: baseline }
+.self-stretch { align-self: stretch }
+.justify-start { justify-content: flex-start }
+.justify-end { justify-content: flex-end }
+.justify-center { justify-content: center }
+.justify-between { justify-content: space-between }
+.justify-around { justify-content: space-around }
+.content-start { align-content: flex-start }
+.content-end { align-content: flex-end }
+.content-center { align-content: center }
+.content-between { align-content: space-between }
+.content-around { align-content: space-around }
+.content-stretch { align-content: stretch }
 </style>
 
 <body class="m0 p0 height-all width-all">
 
-<article id="welcome" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="welcome" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
     <h1 class="font-600 m0 empower-impact break-word paint-">
       <span class="block-flow empower-impact font-600">Resilient</span>
       <span class="block-flow empower-impact font-300">CSS</span>
@@ -66,7 +98,7 @@
   </div>
 </article>
 
-<article id="agenda" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+<article id="agenda" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
   <div class="m-auto">
     <div class="m-auto">
       <ol class="p0">
@@ -78,24 +110,24 @@
   </div>
 </article>
 
-<article id="criteria" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="criteria" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
     <p class="m0 mb2 empower-impact">
       <b>Resilient</b> means <b>durable</b> and <b>flexible</b>.
     </p>
   </div>
 </article>
 
-<article id="ponder" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="ponder" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
     <p class="m0 empower-impact">
       When is <b>CSS</b> resilient?
     </p>
   </div>
 </article>
 
-<article id="thesis" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="thesis" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .resilient {
   --when: immutable;
@@ -106,8 +138,8 @@
   </div>
 </article>
 
-<article id="oppose" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="oppose" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .not-resilient {
   --when: mutable;
@@ -118,21 +150,21 @@
   </div>
 </article>
 
-<article id="mutation" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="mutation" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: mutation;
 </code></pre>
   </div>
 </article>
 
-<article id="mutating" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="mutating" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
     <p class="empower-proud p4 prose">If you define styles and then override them in another <b>context</b> or <b>module</b> then you are mutating them.
   </div>
 </article>
 
-<article id="original" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="original" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">button.css</h3>
 <pre class="m0 p0 font-800 empower-"><code>
@@ -141,7 +173,7 @@
   </div>
 </article>
 
-<article id="codebase" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="codebase" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
 <h3 class="m0 mb2">app.css</h3>
 <pre class="m0 p0 font-800 empower-"><code>
@@ -157,8 +189,8 @@ Unreachable
 Difficult to change
 -->
 
-<article id="mutable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="mutable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .mutable {
   --effect: erratic; <!-- unpredictable -->
@@ -169,16 +201,16 @@ Difficult to change
   </div>
 </article>
 
-<article id="waterfall" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="waterfall" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
     <p class="prose">CSS rules that behave differently in different parts of an app are <b>erratic</b>.
     <p class="prose">Erraticness causes <b>bugs</b>. Contextual bugs are difficult to reproduce.
     <p class="prose">Mutation causes <b>blocking</b>. Mutation inhibits change in your codebase.
   </div>
 </article>
 
-<article id="cost" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="cost" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .mutable {
   --cost: time;
@@ -202,8 +234,8 @@ resilient:
   flexible;
 -->
 
-<article id="immutable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="immutable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .immutable {
   --benefit: predictable;
@@ -214,16 +246,16 @@ resilient:
   </div>
 </article>
 
-<article id="nesting" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="nesting" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: nesting;
 </code></pre>
   </div>
 </article>
 
-<article id="deep" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="deep" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .drawer {
   .header {
@@ -238,8 +270,8 @@ resilient:
   </div>
 </article>
 
-<article id="elemental" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="elemental" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .drawer {
   header {
@@ -254,8 +286,8 @@ resilient:
   </div>
 </article>
 
-<article id="flattened" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="flattened" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .drawer-box {}
 .drawer-header {}
@@ -264,8 +296,8 @@ resilient:
   </div>
 </article>
 
-<article id="flat" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="flat" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 .flat {
   --benefit: findable;
@@ -278,8 +310,8 @@ resilient:
   </div>
 </article>
 
-<article id="contextual" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="contextual" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 .context {
   .component {
@@ -291,16 +323,16 @@ resilient:
   </div>
 </article>
 
-<article id="coupling" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="coupling" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800 empower-"><code>
 --antipattern: coupling;
 </code></pre>
   </div>
 </article>
 
-<article id="coupled" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="coupled" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 .coupled {
   background: Snow;
@@ -310,8 +342,8 @@ resilient:
   </div>
 </article>
 
-<article id="bloat" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
-  <div class="flex flex-column m-auto">
+<article id="bloat" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 .coupling {
   --cost: dependence;
@@ -321,7 +353,7 @@ resilient:
   </div>
 </article>
 
-<article id="temptation" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
+<article id="temptation" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-bee">
   <div class="m-auto">
     <p class="prose">Coupling <b>depends</b> on sharing.
     <p class="prose">Coupling <b>affects</b> inheritance.
@@ -329,8 +361,8 @@ resilient:
   </div>
 </article>
 
-<article id="composable" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="composable" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 .composable {
   --benefit: flexible;
@@ -342,28 +374,28 @@ resilient:
   </div>
 </article>
 
-<article id="challenge" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="challenge" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <h2 class="font-same font-600">#challenge</h2>
     <p class="prose font-400">Compose approachably.
   </div>
 </article>
 
-<article id="balance" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="balance" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose"><b>Balance</b> flexibility vs. governance.
     <p class="prose font-300">If developers sidestep the system then governance is too extreme.
   </div>
 </article>
 
-<article id="dimensions" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="dimensions" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
     <p class="empower-proud prose">Composition affords <b>dimensions</b> of change. Design destructuring...
   </div>
 </article>
 
-<article id="tap-shape" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="tap-shape" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 &lt;button
   class="preset-tap shape-compact tone-primary"
@@ -372,8 +404,8 @@ resilient:
   </div>
 </article>
 
-<article id="tap-pad" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="tap-pad" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 &lt;button
   class="preset-box ix-tap pad-dense tone-primary"
@@ -382,8 +414,8 @@ resilient:
   </div>
 </article>
 
-<article id="spacing" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="spacing" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 &lt;button
   data-preset="control"
@@ -396,8 +428,8 @@ resilient:
   </div>
 </article>
 
-<article id="shelf" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="shelf" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 &lt;button
   data-preset="control"
@@ -410,8 +442,8 @@ resilient:
   </div>
 </article>
 
-<article id="left" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
-  <div class="flex flex-column m-auto">
+<article id="left" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-jam">
+  <div class="block-flex flex-column m-auto">
 <pre class="font-800"><code>
 &lt;button
   data-control="control"
@@ -424,14 +456,14 @@ resilient:
   </div>
 </article>
 
-<article id="centric" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="centric" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <p class="prose font-700">Property-centric architecture
     <p class="prose font-400">Separate files such that the order you load them has no effect on cascade.
   </div>
 </article>
 
-<article id="structure" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="structure" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>alignment.css
@@ -444,7 +476,7 @@ resilient:
   </div>
 </article>
 
-<article id="color" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+<article id="color" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
   <div class="m-auto">
     <ul class="list-none p0">
       <li>tone.css
@@ -454,8 +486,8 @@ resilient:
   </div>
 </article>
 
-<article id="strategies" class="flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
-  <div class="flex flex-column m-auto">
+<article id="strategies" class="block-flex height-viewport height-fit items-center m0 empower-impact border-thick border-dashed paint-air">
+  <div class="block-flex flex-column m-auto">
     <h1 class="font-800 m0 mb2 empower-impact break-word paint-">
       Strategies
     </h1>
