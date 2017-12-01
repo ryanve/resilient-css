@@ -57,8 +57,8 @@ pre { max-width: 50em }
 .block-root { display: block; display: flow-root }
 .block-table { display: table }
 .block-flex { display: flex }
-/* respect [hidden] regardless */
-[hidden] { display: none }
+/* respect [hidden] regardless of above */
+[hidden]:not(:target) { display: none }
 /* via https://npm.im/flexboxes */
 .flex-row { flex-direction: row }
 .flex-row-reverse { flex-direction: row-reverse }
