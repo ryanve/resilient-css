@@ -730,7 +730,7 @@ pre { max-width: 50em }
       var search = jumps[left ? i - 1 : i + 1]
       if (!search) return
       return destination = search
-    }) ? destination : stay
+    }) ? destination : jumps[left ? "shift" : "pop"]() || stay
   }
 
   win.addEventListener('keydown', function(e) {
